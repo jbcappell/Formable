@@ -1,20 +1,4 @@
 <?php
-/**
-* Add to model before class declaration:
-  use jbcappell/Formable;
-*
-* Add to model after class declaration:
-  use Formable\Formable;
-*
-*   Example usage:
-*
-   $user = App\User::first();]
-   $user->setEditable(['name'=>['type'=>'text', 'name'=>'First Name', 'defaultValue'=>null]]);
-   $form = $user->renderForm(); //returns rendered HTML form.
-*
-**/
-
-
 /** TO DO
  *
  * 1. Add support for CSS classes to all rendered elements.
@@ -97,13 +81,13 @@ trait Formable
 
     $type = (array_key_exists('type', $params) ? $params['type'] : null);
     $defaultValue =  (array_key_exists('defaultValue', $params) ? $params['defaultValue'] : null);
-    $name = (array_key_exists('name', $params) ? $params['name'] : $field);
+    $label = (array_key_exists('label', $params) ? $params['label'] : ucwords($field));
 
     $toView = [
         'type'=>$type,
         'field'=>$field,
         'defaultValue'=>$defaultValue,
-        'name'=>$name,
+        'label'=>$label,
         'inputClass'=>$this->inputClass
     ];
 
@@ -127,7 +111,7 @@ trait Formable
       $return = view('Formable::'.$input['scaffold'], $toView)->render();
     }
 
-    return view('Formable::frame', ['label'=>$name, 'input'=>$return])->render();
+    return view('Formable::frame', ['label'=>$label, 'input'=>$return])->render();
 
   }
 

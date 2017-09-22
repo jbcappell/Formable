@@ -41,10 +41,10 @@ class User extends Model
 
   public $editable = [
 
-    'name' => ['type'=>'text', 'name'=>'First Name'],
-    'email' => ['type'=>'email', 'name'=>'Email'],
-    'password' => ['type'=>'password', 'name'=>'Password'],
-    'role' => ['type'=>'select', 'name'=>'User Role', 'options'=>[0=>'Select', 1=>'Admin', 2=>'User']]
+    'name' => ['type'=>'text', 'label'=>'First Name'],
+    'email' => ['type'=>'email', 'label'=>'Email'],
+    'password' => ['type'=>'password', 'label'=>'Password'],
+    'role' => ['type'=>'select', 'label'=>'User Role', 'options'=>[0=>'Select', 1=>'Admin', 2=>'User']]
 
   ];
 
