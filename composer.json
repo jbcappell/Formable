@@ -1,0 +1,13 @@
+{
+    "name": "jbcappell/formable",
+    "description": "An HTML form generator Trait for Laravel models.",
+    "type": "package",
+    "authors": [
+        {
+            "name": "jbcappell",
+            "email": "j.b.cappell@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
